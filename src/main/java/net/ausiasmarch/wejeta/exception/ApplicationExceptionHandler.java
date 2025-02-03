@@ -11,8 +11,6 @@ import net.ausiasmarch.wejeta.bean.ErrorBean;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-
-
 @ControllerAdvice
 public class ApplicationExceptionHandler {
 

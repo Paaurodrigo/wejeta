@@ -11,7 +11,7 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
 
     Optional<UsuarioEntity> findByEmail(String email);
 
-    Optional<UsuarioEntity> findByEmailAndPassword(String email, String password);
+    Optional<UsuarioEntity> findByEmailAndPasswordAndPassword2(String email, String password, String password2);// se añade 2 contraseñas
     Page<UsuarioEntity> findByNombreContainingOrApellido1ContainingOrApellido2ContainingOrEmailContaining(
         String filter2, String filter3, String filter4, String filter5, Pageable oPageable);
 }

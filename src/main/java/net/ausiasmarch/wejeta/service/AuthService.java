@@ -25,17 +25,19 @@ public class AuthService {
     HttpServletRequest oHttpServletRequest;
 
     public boolean checkLogin(LogindataBean oLogindataBean) {
-        if (oUsuarioRepository.findByEmailAndPassword(oLogindataBean.getEmail(), oLogindataBean.getPassword())
+        if (oUsuarioRepository.findByEmailAndPasswordAndPassword2(oLogindataBean.getEmail(), oLogindataBean.getPassword(), oLogindataBean.getPassword2())
                 .isPresent()) {
             return true;
         } else {
             return false;
         }
     }
-
+    
+//OJO PREGUNTA EXAMEN TE DEVUELVE EMAIL Y NOMBRE
     private Map<String, String> getClaims(String email) {
         Map<String, String> claims = new HashMap<>();
         claims.put("email", email);
+        claims.put("nombre", oUsuarioRepository.findByEmail(email).get().getNombre());
         return claims;
     };
 

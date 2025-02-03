@@ -12,4 +12,5 @@ import lombok.Setter;
 public class LogindataBean {
     private String email;
     private String password;
+    private String password2;// se añade 2 contraseñas
 }

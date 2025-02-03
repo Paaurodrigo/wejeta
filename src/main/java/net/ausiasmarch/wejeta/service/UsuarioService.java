@@ -51,7 +51,7 @@ public class UsuarioService {
     }
 
     public Page<UsuarioEntity> getPage(Pageable oPageable, Optional<String> filter) {
-        if (oAuthService.isAdmin()) {
+        if (oAuthService.isAdmin() || oAuthService.isContable()) { // || oAuthService.isContable() para que el get page lo pueda ver tambien el contable
             if (filter.isPresent()) {
                 return oUsuarioRepository
                         .findByNombreContainingOrApellido1ContainingOrApellido2ContainingOrEmailContaining(

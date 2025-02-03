@@ -42,11 +42,16 @@ public class UsuarioEntity {
     @Size(min = 0, max = 255)
     private String apellido2;
 
+
+
     @Email
     private String email;
     
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // se añade 2 contraseñas
+    private String password2;
 
     @ManyToOne(fetch = jakarta.persistence.FetchType.EAGER)
     @JoinColumn(name = "id_tipousuario")
